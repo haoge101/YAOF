@@ -221,3 +221,16 @@ CONFIG_DOCKER_STO_EXT4=y
 ### OTHERS ###
 CONFIG_PACKAGE_kmod-crypto-cmac=y
 CONFIG_PACKAGE_kmod-crypto-ccm=y
+CONFIG_PACKAGE_quectel-CM-5G=y
+CONFIG_PACKAGE_usb-modeswitch=y
+CONFIG_PACKAGE_kmod-mii=y
+CONFIG_PACKAGE_kmod-usb-net=y
+CONFIG_PACKAGE_kmod-usb-wdm=y
+CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=y
+CONFIG_PACKAGE_uqmi=y
+CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=y
+CONFIG_PACKAGE_umbim=y
+CONFIG_PACKAGE_kmod-usb-serial-option=y
+CONFIG_PACKAGE_kmod-usb-serial=y
+CONFIG_PACKAGE_kmod-usb-serial-wwan=y
+CONFIG_PACKAGE_luci-proto-qmi=y
