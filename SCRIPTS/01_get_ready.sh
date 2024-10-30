@@ -65,6 +65,7 @@ find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name '
 rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
 cp -rf ./openwrt_snap/package/* ./openwrt/package/
 cp -rf ./openwrt_snap/feeds.conf.default ./openwrt/feeds.conf.default
-
+mkdir ./openwrt/package/wwan
+cp -rf ./lede/package/wwan/* ./openwrt/package/wwan
 # 退出脚本
 exit 0
