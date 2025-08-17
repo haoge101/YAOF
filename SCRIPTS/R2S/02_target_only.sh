@@ -5,8 +5,15 @@ clear
 sed -i 's,-mcpu=generic,-march=armv8-a,g' include/target.mk
 
 # 交换 LAN/WAN 口
-sed -i 's,"eth1" "eth0","eth0" "eth1",g' target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+#sed -i 's,"eth1" "eth0","eth0" "eth1",g' target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+#sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+
+sed -i "s/^PKG_VERSION:=.*/PKG_VERSION:=2.0.1/" feeds/packages/utils/syncthing/Makefile
+sed -i "s/^PKG_HASH:=.*/PKG_HASH:=skip/" feeds/packages/utils/syncthing/Makefile
+sed -i "s/option _no_default_folder '1'/option _no_default_folder '0'/" feeds/packages/utils/syncthing/files/syncthing.conf
+sed -i 's|IDX_DB=\$(readlink -n "\$home"/index-v0\.14\.0\.db)|IDX_DB=$(readlink -n "$home"/index-v2)|' feeds/packages/utils/syncthing/files/syncthing.init
 
 # remove LRNG for 3328
 rm -f target/linux/generic/hack-6.6/696*
